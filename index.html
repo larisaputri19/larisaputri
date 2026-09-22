@@ -4,44 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--
-  ============================================================
-  CARA MENGEDIT HALAMAN INI
-
-  Cari tulisan GANTI di bawah. Hanya bagian itu yang perlu
-  diubah. Tulisan yang diapit tanda kurung siku dengan tanda
-  seru adalah catatan, tidak ikut tampil di halaman.
-
-  Jangan ubah bagian <style> kecuali sudah paham CSS.
-  Kalau halaman jadi berantakan, buka tab History di repo
-  lalu kembalikan ke versi sebelumnya.
-  ============================================================
--->
-
-<!-- GANTI: nama kamu -->
-<title>Nama Lengkap Kamu</title>
+<title>Larisa Putri Salsabila — Portofolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --deep:   #12231a;
-    --deep-2: #1d3428;
-    --paper:  #f1f5ee;
+    --deep:   #0d1f18;
+    --deep-2: #163a2a;
+    --paper:  #f6f8f5;
     --card:   #ffffff;
-    --rule:   #cfdcd2;
-    --ink:    #12231a;
-    --soft:   #5f7167;
-    --mark:   #b8452f;
+    --rule:   #dfe8e1;
+    --ink:    #0d1f18;
+    --soft:   #6b7d72;
+    --mark:   #b23a2e;
+    --mark-2: #d4634f;
     --mint:   #9ec2a9;
+    --gold:   #c9a24b;
     --serif:  "Newsreader", Georgia, "Times New Roman", serif;
     --sans:   "Karla", "Helvetica Neue", Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -52,57 +39,90 @@
     line-height: 1.65;
   }
 
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 72px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px 80px; }
 
   /* ---------------- kepala halaman ---------------- */
 
   .hero {
     position: relative;
-    background: var(--deep);
-    background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 0, transparent 37px,
-      rgba(158,194,169,.13) 37px, rgba(158,194,169,.13) 38px
-    );
+    background: linear-gradient(135deg, #0d1f18 0%, #163a2a 70%, #1f5138 100%);
     color: var(--paper);
     overflow: hidden;
+    padding-bottom: 44px;
   }
 
   .hero::before {
     content: "";
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 10px;
-    background: var(--mark);
+    width: 6px;
+    background: linear-gradient(to bottom, var(--mark), var(--gold));
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -100px; top: -100px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(158,194,169,.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
   }
 
   .hero-inner {
-    max-width: 860px;
+    max-width: 880px;
     margin: 0 auto;
-    padding: 76px 20px 64px 38px;
+    padding: 64px 20px 16px 36px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
   }
+
+  .avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--mark), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 44px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    border: 3px solid rgba(255,255,255,.18);
+  }
+
+  .hero-text { flex: 1; min-width: 240px; }
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(38px, 8vw, 68px);
-    font-weight: 600;
-    line-height: 1.04;
-    letter-spacing: -0.025em;
+    font-size: clamp(30px, 5.5vw, 50px);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
     margin: 0 0 10px;
   }
 
   .role {
     color: var(--mint);
-    font-size: clamp(16px, 2.2vw, 19px);
+    font-size: clamp(14px, 1.8vw, 17px);
     margin: 0;
-    max-width: 34em;
+    max-width: 42em;
+    letter-spacing: .01em;
   }
 
   .hero-line {
-    width: 74px;
+    width: 64px;
     height: 3px;
-    background: var(--mark);
-    margin: 26px 0 0;
+    background: linear-gradient(to right, var(--mark), var(--gold));
+    margin: 18px 0 0;
+    border-radius: 2px;
   }
 
   /* ---------------- kartu data ---------------- */
@@ -110,11 +130,12 @@
   .card {
     background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 6px 22px;
-    margin-top: -34px;
+    border-radius: 8px;
+    padding: 8px 26px;
+    margin-top: -36px;
     position: relative;
-    box-shadow: 0 1px 0 rgba(18,35,26,.04);
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(13,31,24,.10);
   }
 
   .row {
@@ -122,12 +143,19 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 20px;
-    padding: 11px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--rule);
   }
   .row:last-child { border-bottom: 0; }
 
-  .row dt { color: var(--soft); font-size: 15px; flex: 0 0 auto; }
+  .row dt {
+    color: var(--soft);
+    font-size: 13px;
+    flex: 0 0 auto;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+  }
 
   .row dd {
     margin: 0;
@@ -135,53 +163,79 @@
     font-variant-numeric: tabular-nums;
     font-weight: 500;
     overflow-wrap: anywhere;
+    font-size: 15.5px;
   }
 
   /* ---------------- bagian isi ---------------- */
 
-  section { margin-top: 46px; }
+  section { margin-top: 52px; }
 
   h2 {
     font-family: var(--serif);
     font-size: 24px;
-    font-weight: 600;
-    margin: 0 0 18px;
-    padding-left: 15px;
-    border-left: 4px solid var(--mark);
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding-left: 16px;
+    border-left: 3px solid var(--mark);
     line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  h2 .ico {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
   }
 
   p { margin: 0 0 14px; }
-  .lead { font-size: 17.5px; max-width: 62ch; }
+  .lead { font-size: 17px; max-width: 66ch; color: #2b3f34; }
 
   /* ---------------- pengalaman ---------------- */
 
   .item {
     background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 18px 22px;
-    margin-bottom: 14px;
+    border-left: 3px solid var(--mark);
+    border-radius: 6px;
+    padding: 18px 24px;
+    margin-bottom: 12px;
+    transition: transform .18s ease, box-shadow .18s ease, border-left-color .18s ease;
+  }
+  .item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(13,31,24,.10);
+    border-left-color: var(--gold);
   }
   .item:last-child { margin-bottom: 0; }
 
   .item h3 {
     font-family: var(--serif);
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 18.5px;
+    font-weight: 700;
     margin: 0;
     line-height: 1.3;
   }
 
   .meta {
     color: var(--mark);
-    font-size: 14px;
+    font-size: 12.5px;
     font-weight: 700;
-    margin: 4px 0 8px;
+    margin: 5px 0 9px;
     font-variant-numeric: tabular-nums;
+    text-transform: uppercase;
+    letter-spacing: .07em;
   }
 
-  .item p { margin: 0; color: #35473c; }
+  .item p { margin: 0; color: #35473c; font-size: 15.5px; }
+
+  .item ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: #35473c;
+    font-size: 15.5px;
+  }
+  .item ul li { margin-bottom: 4px; }
 
   /* ---------------- kemampuan ---------------- */
 
@@ -190,48 +244,72 @@
   .tags li {
     background: var(--deep);
     color: var(--paper);
-    border-radius: 999px;
-    padding: 7px 16px;
-    font-size: 14.5px;
+    border: 1px solid var(--deep-2);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 13.5px;
     font-weight: 500;
+    letter-spacing: .02em;
+    transition: background .18s ease, transform .15s ease;
+  }
+
+  .tags li:hover {
+    background: var(--mark);
+    transform: translateY(-2px);
   }
 
   /* ---------------- kontak ---------------- */
 
-  .contact { background: var(--deep); border: 0; border-radius: 4px; padding: 6px 22px; margin-top: 0; box-shadow: none; }
-  .contact .row { border-bottom-color: rgba(158,194,169,.22); }
+  .contact {
+    background: linear-gradient(135deg, #0d1f18, #163a2a);
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 26px;
+    margin-top: 0;
+    box-shadow: 0 10px 30px rgba(13,31,24,.20);
+  }
+  .contact .row { border-bottom-color: rgba(158,194,169,.18); }
   .contact .row dt { color: var(--mint); }
   .contact .row dd { color: var(--paper); }
+  .contact a { color: var(--paper); text-decoration-color: var(--gold); }
+  .contact a:hover { color: var(--gold); }
 
-  a { color: inherit; text-decoration-color: var(--mark); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-  a:hover { color: var(--mint); }
+  a { color: inherit; text-decoration-color: var(--mark); text-decoration-thickness: 2px; text-underline-offset: 4px; transition: color .15s ease; }
+  a:hover { color: var(--mark-2); }
   a:focus-visible { outline: 2px solid var(--mark); outline-offset: 3px; border-radius: 2px; }
 
   footer {
-    margin-top: 46px;
-    padding-top: 18px;
+    margin-top: 52px;
+    padding-top: 20px;
     border-top: 1px solid var(--rule);
     color: var(--soft);
-    font-size: 14px;
+    font-size: 13.5px;
+    text-align: center;
+    letter-spacing: .02em;
   }
 
-  @media (max-width: 560px) {
-    .hero-inner { padding: 54px 18px 48px 30px; }
-    .card { padding: 4px 16px; margin-top: -26px; }
-    .row { flex-direction: column; gap: 0; padding: 9px 0; }
+  /* ---------------- responsif ---------------- */
+
+  @media (max-width: 600px) {
+    .hero-inner { padding: 48px 18px 12px 28px; gap: 18px; }
+    .avatar { width: 84px; height: 84px; font-size: 34px; }
+    .card { padding: 4px 18px; margin-top: -28px; }
+    .row { flex-direction: column; gap: 2px; padding: 11px 0; }
     .row dd { text-align: left; }
-    .contact { padding: 4px 16px; margin-top: 0; }
+    .contact { padding: 4px 18px; margin-top: 0; }
     .item { padding: 16px 18px; }
   }
 
   @media print {
     body { background: #fff; }
-    .hero { background: #fff; color: #12231a; background-image: none; }
-    .role { color: #5f7167; }
-    .tags li { background: #fff; color: #12231a; border: 1px solid #cfdcd2; }
-    .contact { background: #fff; border: 1px solid #cfdcd2; }
-    .contact dt { color: #5f7167; }
-    .contact dd { color: #12231a; }
+    .hero { background: #fff; color: #0d1f18; }
+    .hero::before, .hero::after { display: none; }
+    .role { color: #6b7d72; }
+    .avatar { background: #0d1f18; }
+    .tags li { background: #fff; color: #0d1f18; border: 1px solid #dfe8e1; }
+    .contact { background: #fff; border: 1px solid #dfe8e1; }
+    .contact dt { color: #6b7d72; }
+    .contact dd, .contact a { color: #0d1f18; }
     .card, .item { box-shadow: none; }
   }
 </style>
@@ -240,114 +318,169 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <!-- GANTI: nama lengkap kamu -->
-    <h1>Nama Lengkap Kamu</h1>
-
-    <!-- GANTI: program studi dan kampus -->
-    <p class="role">Mahasiswa Komputerisasi Akuntansi, Universitas Komputer Indonesia</p>
-
-    <div class="hero-line"></div>
+    <div class="avatar">LP</div>
+    <div class="hero-text">
+      <h1>Larisa Putri Salsabila</h1>
+      <p class="role">Mahasiswa Komputerisasi Akuntansi — Universitas Komputer Indonesia</p>
+      <div class="hero-line"></div>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <!-- GANTI: isi setelah <dd> dengan data kamu.
-       Mau menambah baris? Salin satu blok <div class="row"> lalu ubah isinya. -->
+  <!-- ===== DATA PRIBADI ===== -->
   <dl class="card">
     <div class="row">
       <dt>NIM</dt>
-      <dd>11122001</dd>
+      <dd>11024010</dd>
     </div>
     <div class="row">
-      <dt>Angkatan</dt>
-      <dd>2022</dd>
+      <dt>Program Studi</dt>
+      <dd>Komputerisasi Akuntansi</dd>
+    </div>
+    <div class="row">
+      <dt>Kampus</dt>
+      <dd>Universitas Komputer Indonesia</dd>
     </div>
     <div class="row">
       <dt>Domisili</dt>
-      <dd>Bandung</dd>
+      <dd>Bandung, Jawa Barat</dd>
     </div>
     <div class="row">
       <dt>Email</dt>
-      <dd>email@kamu.com</dd>
+      <dd><a href="mailto:larisa.putri@example.com">larisa.putri@example.com</a></dd>
     </div>
   </dl>
 
+  <!-- ===== TENTANG SAYA ===== -->
   <section>
-    <h2>Tentang saya</h2>
-    <!-- GANTI: dua sampai tiga kalimat. Tulis apa yang kamu bisa dan
-         sedang pelajari, bukan sifat seperti rajin atau pekerja keras. -->
+    <h2><span class="ico">👤</span> Tentang Saya</h2>
     <p class="lead">
-      Mahasiswa semester lima yang tertarik pada pencatatan keuangan berbasis sistem.
-      Terbiasa mengolah data transaksi dengan Excel dan menyusun laporan keuangan sederhana,
-      serta sedang mempelajari SQL untuk menarik data dari basis data.
+      Saya Larisa Putri Salsabila, mahasiswa Program Studi Komputerisasi Akuntansi
+      di Universitas Komputer Indonesia. Saya memiliki ketertarikan pada bidang
+      pencatatan keuangan berbasis sistem, pengolahan data transaksi, dan penyusunan
+      laporan keuangan. Saya terbiasa bekerja teliti dengan angka, disiplin terhadap
+      tenggat waktu, dan sedang memperdalam kemampuan SQL serta aplikasi akuntansi
+      untuk mendukung karier di bidang akuntansi berbasis teknologi.
     </p>
   </section>
 
+  <!-- ===== PENDIDIKAN ===== -->
   <section>
-    <h2>Kemampuan</h2>
-    <!-- GANTI: tambah atau hapus <li> sesuai kemampuan kamu -->
+    <h2><span class="ico">🎓</span> Pendidikan</h2>
+    <div class="item">
+      <h3>Universitas Komputer Indonesia</h3>
+      <p class="meta">S1 Komputerisasi Akuntansi • 2024 – Sekarang</p>
+      <p>Mata kuliah yang diminati: Sistem Informasi Akuntansi, Akuntansi Biaya, Pengolahan Data Keuangan, dan Basis Data. Aktif dalam kegiatan praktikum laboratorium akuntansi.</p>
+    </div>
+  </section>
+
+  <!-- ===== KEMAMPUAN ===== -->
+  <section>
+    <h2><span class="ico">💡</span> Kemampuan</h2>
     <ul class="tags">
-      <li>Microsoft Excel</li>
-      <li>Lookup dan pivot table</li>
-      <li>Jurnal dan laporan keuangan</li>
+      <li>Microsoft Excel (Lookup, Pivot Table)</li>
+      <li>Microsoft Word & PowerPoint</li>
       <li>Zahir Accounting</li>
       <li>MYOB</li>
-      <li>SQL dasar</li>
+      <li>Accurate</li>
+      <li>SQL Dasar</li>
+      <li>Jurnal & Laporan Keuangan</li>
+      <li>Rekonsiliasi Bank</li>
+      <li>Manajemen Data Transaksi</li>
       <li>GitHub</li>
+      <li>Ketelitian & Manajemen Waktu</li>
+      <li>Kerja Tim</li>
     </ul>
   </section>
 
+  <!-- ===== PENGALAMAN ===== -->
   <section>
-    <h2>Pengalaman</h2>
+    <h2><span class="ico">💼</span> Pengalaman</h2>
 
-    <!-- GANTI: satu blok untuk satu pengalaman.
-         Salin seluruh blok <div class="item"> kalau mau menambah. -->
+    <div class="item">
+      <h3>Asisten Laboratorium Akuntansi — UNIKOM</h3>
+      <p class="meta">2025 – Sekarang</p>
+      <ul>
+        <li>Membantu dosen dalam membimbing praktikum Zahir Accounting dan MYOB.</li>
+        <li>Menyusun modul praktikum sederhana untuk mahasiswa semester bawah.</li>
+        <li>Memeriksa dan merekap hasil laporan keuangan praktikan.</li>
+      </ul>
+    </div>
+
     <div class="item">
       <h3>Bendahara Himpunan Mahasiswa Komputerisasi Akuntansi</h3>
-      <p class="meta">2025 sampai sekarang</p>
-      <p>Menyusun laporan pemasukan dan pengeluaran kegiatan himpunan, serta merekap pertanggungjawaban dana tiap acara.</p>
+      <p class="meta">2025 – Sekarang</p>
+      <ul>
+        <li>Menyusun laporan pemasukan dan pengeluaran kegiatan himpunan.</li>
+        <li>Merekap pertanggungjawaban dana setiap acara menggunakan Excel.</li>
+        <li>Mengelola kas organisasi dan menyusun laporan bulanan.</li>
+      </ul>
     </div>
 
     <div class="item">
-      <h3>Peserta Pelatihan GitHub, Ruang Kreatif HIMA KA</h3>
-      <p class="meta">September 2026</p>
-      <p>Mempelajari pencatatan riwayat perubahan berkas dan kolaborasi dokumen menggunakan GitHub.</p>
+      <h3>Proyek Laporan Keuangan Perusahaan Dagang</h3>
+      <p class="meta">Mata Kuliah Akuntansi Keuangan • 2025</p>
+      <ul>
+        <li>Menyusun laporan laba rugi, neraca, dan arus kas sederhana.</li>
+        <li>Menggunakan Zahir Accounting dan Excel untuk pencatatan transaksi.</li>
+        <li>Mendapat nilai A pada proyek akhir mata kuliah.</li>
+      </ul>
     </div>
-  </section>
 
-  <section>
-    <h2>Pendidikan</h2>
-
-    <!-- GANTI: riwayat pendidikan kamu -->
     <div class="item">
-      <h3>Universitas Komputer Indonesia</h3>
-      <p class="meta">Komputerisasi Akuntansi, 2022 sampai sekarang</p>
-      <p>Mata kuliah yang diminati: sistem informasi akuntansi, akuntansi biaya, dan pengolahan data keuangan.</p>
+      <h3>Peserta Pelatihan GitHub — Ruang Kreatif HIMA KA UNIKOM</h3>
+      <p class="meta">September 2025</p>
+      <ul>
+        <li>Mempelajari pencatatan riwayat perubahan berkas dan kolaborasi dokumen.</li>
+        <li>Membuat repositori portofolio pribadi menggunakan GitHub Pages.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Peserta Workshop "Akuntansi Digital untuk Gen Z"</h3>
+      <p class="meta">Bandung • 2025</p>
+      <ul>
+        <li>Mengikuti pelatihan penggunaan Accurate Online untuk UMKM.</li>
+        <li>Mempelajari otomatisasi laporan keuangan dengan Excel dan Google Sheets.</li>
+      </ul>
     </div>
   </section>
 
+  <!-- ===== KONTAK ===== -->
   <section>
-    <h2>Kontak</h2>
-    <!-- GANTI: username dan alamat kamu. Bagian setelah href= juga ikut diganti. -->
+    <h2><span class="ico">📬</span> Kontak</h2>
     <dl class="card contact">
       <div class="row">
-        <dt>GitHub</dt>
-        <dd><a href="https://github.com/namaakunkamu">github.com/namaakunkamu</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:larisa.putri@example.com">larisa.putri@example.com</a></dd>
       </div>
       <div class="row">
-        <dt>Email</dt>
-        <dd><a href="mailto:email@kamu.com">email@kamu.com</a></dd>
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></dd>
       </div>
       <div class="row">
         <dt>Instagram</dt>
-        <dd><a href="https://instagram.com/akunkamu">@akunkamu</a></dd>
+        <dd><a href="https://instagram.com/larisaaptrii">@larisaaptrii</a></dd>
+      </div>
+      <div class="row">
+        <dt>TikTok</dt>
+        <dd><a href="https://tiktok.com/@larisaaptrii">@larisaaptrii</a></dd>
+      </div>
+      <div class="row">
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/larisaaptrii">github.com/larisaaptrii</a></dd>
+      </div>
+      <div class="row">
+        <dt>LinkedIn</dt>
+        <dd><a href="https://linkedin.com/in/larisaaptrii">linkedin.com/in/larisaaptrii</a></dd>
       </div>
     </dl>
   </section>
 
   <footer>
-    Dibuat saat Pelatihan GitHub, Ruang Kreatif HIMA KA UNIKOM, September 2026.
+    © 2025 Larisa Putri Salsabila — Portofolio Mahasiswa Komputerisasi Akuntansi UNIKOM
   </footer>
 
 </div>
